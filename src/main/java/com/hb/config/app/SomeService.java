@@ -7,4 +7,8 @@ public class SomeService {
     public void doSomething() {
         System.out.println("I did something");
     }
+
+    public void someBadMethod() {
+
+    }
 }
