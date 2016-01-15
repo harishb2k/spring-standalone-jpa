@@ -2,4 +2,7 @@ out
 build/**
 .gradle/2.5/
 spring-standalone-jpa.iws
-
+/spring-standalone-jpa.ids
+/build
+/out
+/.gradle
