@@ -1,6 +1,4 @@
 out
-out/**
 build/**
-*.*~
-*/*.*~
-.gradle/**
+.gradle/2.5/
+

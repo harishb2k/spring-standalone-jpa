@@ -17,7 +17,7 @@
     </annotationProcessing>
   </component>
   <component name="CopyrightManager" default="" />
-  <component name="DataSourceManagerImpl" format="xml" hash="1268192498">
+  <component name="DataSourceManagerImpl" format="xml" hash="1117962623">
     <data-source source="LOCAL" name="MySQL - java@localhost" uuid="44220ed2-cd16-4afc-ab8b-d7a53bf0bef2">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
