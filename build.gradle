@@ -10,16 +10,32 @@
 buildscript {
     repositories {
         mavenCentral()
+
+        maven {
+            url 'http://192.168.99.100:8081/artifactory/plugins-release'
+            credentials {
+                username = "${artifactory_user}"
+                password = "${artifactory_password}"
+            }
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.1.RELEASE")
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
     }
 }
+
+repositories {
+    mavenCentral()
+    //maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+    apply plugin: "com.jfrog.artifactory"
+    apply plugin: 'maven-publish'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -28,14 +44,25 @@ repositories {
     jcenter()
 }
 
-jar {
-    baseName = 'common-jsp'
+
+    group = 'com.hb.base'
     version = '1.0.0'
+
+
+    jar {
+    baseName = 'common-jsp'
+        version = project.version
 }
 
-repositories {
-    mavenCentral()
-    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -56,4 +83,34 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-// mainClassName = 'com.hb.app.main.MainClass'
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'libs-release-local'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+
+        }
+
+        defaults {
+            publications('mavenJava')
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'libs-release'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+
+        }
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
