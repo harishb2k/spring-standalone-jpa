@@ -6,3 +6,4 @@ spring-standalone-jpa.iws
 /build
 /out
 /.gradle
+/bin/

@@ -56,7 +56,7 @@ public class MessagingConfig {
 
     @Bean
     public ConnectionFactory connectionFactory() {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("10.0.0.5");
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("192.168.56.101");
         connectionFactory.setUsername("sr_sqs_pp");
         connectionFactory.setPassword("sr_sqs_pp_dev_pass");
         connectionFactory.setVirtualHost("/dev/sr/user");

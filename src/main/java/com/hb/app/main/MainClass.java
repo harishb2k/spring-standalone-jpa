@@ -1,11 +1,12 @@
 package com.hb.app.main;
 
-import com.hb.config.app.MasterConfig;
-import com.hb.config.app.SomeService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+
+import com.hb.config.app.MasterConfig;
+import com.hb.config.app.SomeService;
 
 
 @SpringBootApplication

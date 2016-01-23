@@ -12,7 +12,7 @@ buildscript {
         mavenCentral()
 
         maven {
-            url 'http://10.0.0.5:8081/artifactory/plugins-release'
+            url 'http://192.168.56.101:8081/artifactory/plugins-release'
             credentials {
                 username = "${artifactory_user}"
                 password = "${artifactory_password}"
@@ -36,10 +36,11 @@ repositories {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-    apply plugin: "com.jfrog.artifactory"
-    apply plugin: 'maven-publish'
-    apply plugin: 'application'
-    apply plugin: 'docker'
+apply plugin: "com.jfrog.artifactory"
+apply plugin: 'maven-publish'
+apply plugin: 'application'
+apply plugin: 'docker'
+apply plugin: 'eclipse'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
