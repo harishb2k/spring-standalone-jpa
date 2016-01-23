@@ -28,5 +28,6 @@ public class MainClass {
         SomeService someService = context.getBean(SomeService.class);
         someService.doSomething();
         someService.someBadMethod();
+        System.exit(0);
     }
 }

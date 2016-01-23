@@ -5,4 +5,5 @@ import com.hb.core.model.AuthUser;
 
 
 public interface AuthUserDao extends GenericDAO<AuthUser, Integer> {
+	public void hackMe();
 }

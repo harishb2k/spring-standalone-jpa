@@ -62,7 +62,7 @@ public class DBConfig {
                 setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
                 //setProperty("hibernate.globally_quoted_identifiers", "true");
                 setProperty("hibernate.show_sql", "true");
-                setProperty("hibernate.hbm2ddl.auto", "create");
+                //setProperty("hibernate.hbm2ddl.auto", "create");
 
                 setProperty("hibernate.use_sql_comments", "true");
                 setProperty("hibernate.format_sql", "true");
