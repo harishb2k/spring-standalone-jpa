@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class AuthUserDaoImpl extends BaseGenericDAOImpl<AuthUser, Integer> implements AuthUserDao {
-	public void hackMe() {
-	}
 }
